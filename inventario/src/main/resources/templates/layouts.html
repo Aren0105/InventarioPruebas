@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Mobile Navbar -->
+    <nav
+      th:fragment="mobile_navbar"
+      class="navbar navbar-dark bg-dark d-md-none"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <i class="bi bi-car-front-fill"></i>
+          Premium Parts
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasSidebar"
+          aria-controls="offcanvasSidebar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- Offcanvas Sidebar -->
+    <div
+      th:fragment="offcanvas_sidebar"
+      class="offcanvas offcanvas-start bg-dark text-white"
+      tabindex="-1"
+      id="offcanvasSidebar"
+      aria-labelledby="offcanvasSidebarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasSidebarLabel">
+          <i class="bi bi-car-front-fill"></i>
+          Premium Parts
+        </h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div
+          class="navigator d-flex flex-column align-items-start p-2 ms-2 gap-4"
+        >
+          <a th:href="@{/empleados}" class="text-decoration-none text-light">
+            <i class="bi bi-people-fill"></i>
+            Gestion de empleado
+          </a>
+          <a th:href="@{/inventario}" class="text-decoration-none text-light">
+            <i class="bi bi-archive-fill"></i>
+            Gestion de inventario
+          </a>
+          <a th:href="@{/ventas}" class="text-decoration-none text-light">
+            <i class="bi bi-cash-coin"></i>
+            Modulo de ventas
+          </a>
+        </div>
+        <hr class="text-secondary" />
+        <form th:action="@{/logout}" method="post" class="ms-2">
+          <button type="submit" class="btn btn-link text-decoration-none text-light p-0">
+            <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- -------------------------------------------------------------------------------- -->
+    <div
+      th:fragment="sidebar"
+      class="container-left d-none d-md-flex flex-column"
+    >
+      <div class="logo-navbar text-center p-3 shadow">
+        <a class="navbar-brand brand-badge fw-bolder text-light fs-5" href="#">
+          <i class="bi bi-car-front-fill"></i>
+          Premium Parts
+        </a>
+      </div>
+      <div
+        class="navigator d-flex flex-column align-items-start p-2 mt-3 ms-2 gap-4"
+      >
+        <a th:href="@{/empleados}" class="text-decoration-none text-light">
+          <i class="bi bi-people-fill"></i>
+          Gestion de empleado
+        </a>
+        <a th:href="@{/inventario}" class="text-decoration-none text-light">
+          <i class="bi bi-archive-fill"></i>
+          Gestion de inventario
+        </a>
+        <a th:href="@{/ventas}" class="text-decoration-none text-light">
+          <i class="bi bi-cash-coin"></i>
+          Modulo de ventas
+        </a>
+      </div>
+      <hr class="text-secondary" />
+      <form th:action="@{/logout}" method="post" class="ms-2 p-2">
+        <button type="submit" class="btn btn-link text-decoration-none text-danger p-0">
+          <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+        </button>
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

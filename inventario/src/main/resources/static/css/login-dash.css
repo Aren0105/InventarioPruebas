@@ -1,0 +1,10 @@
+body {
+    background: #f0f2f5;
+}
+.card {
+    border: none;
+    border-radius: 12px;
+}
+.nav-pills .nav-link {
+    border-radius: 8px;
+}
