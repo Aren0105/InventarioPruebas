@@ -255,8 +255,8 @@
               </form>
 
               <div class="table-responsive mt-3">
-                <table class="table align-middle table-hover">
-                  <thead class="table-dark">
+                <table class="table align-middle table-hover inventario-tabla-borde-2">
+                  <thead class="table-danger">
                     <tr class="text-center">
                       <th>ID</th>
                       <th>Nombre</th>
@@ -267,7 +267,7 @@
                       <th>Acciones</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody class="">
                     <tr th:each=" p : ${productos}" class="text-center">
                       <td th:text="${p.id}"></td>
                       <td th:text="${p.nombre}"></td>
