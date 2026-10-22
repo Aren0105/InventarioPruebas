@@ -39,3 +39,10 @@ body {
     grid-column: 1 / -1;
   }
 }
+.inventario-tabla-borde-2 {
+  border: 2px solid #212529;
+}
+.inventario-tabla-borde-2 th,
+.inventario-tabla-borde-2 td {
+  border: 2px solid #212529;
+}
